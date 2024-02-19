@@ -1,6 +1,6 @@
 <p>home works!</p>
 <ul>
-  for(photo in photos();track photo.id ){
-  <li>{{photos.title}}</li>
+  @for(photo of photos();track photo.id ){
+  <li>{{photo.title}}</li>
   }
 </ul>

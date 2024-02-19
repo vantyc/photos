@@ -1,5 +1,6 @@
-import { Component, inject, Signal } from '@angular/core';
+import { Component, inject, Signal, OnInit } from '@angular/core';
 import { PhotosService } from '../../services/photos.service';
+import { Photos } from '../../interfaces/photos';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +11,11 @@ import { PhotosService } from '../../services/photos.service';
 })
 export class HomeComponent implements OnInit{
 
-  private photosService!=inject(PhotosService);
-  public photos:Signal<Photos[]>;
+  private photosService=inject(PhotosService);
+  public photos!:Signal<Photos[]>;
 
 
-  public ngonInit(){
-    fotos=fotosService.getPhotos();
+  public ngOnInit(){
+    this.photos=this.photosService.getPhotos();
   }
-
 }
